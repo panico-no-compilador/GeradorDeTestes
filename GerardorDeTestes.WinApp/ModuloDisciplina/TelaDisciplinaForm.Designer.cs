@@ -97,6 +97,7 @@
             Controls.Add(label1);
             Controls.Add(tbNome);
             Controls.Add(tbId);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "TelaDisciplinaForm";
