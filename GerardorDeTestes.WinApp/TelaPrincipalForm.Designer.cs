@@ -34,10 +34,10 @@ namespace GerardorDeTestes.WinApp
             cadastrosMenuItem = new ToolStripMenuItem();
             disciplinaMenuItem = new ToolStripMenuItem();
             materiasMenuItem = new ToolStripMenuItem();
-            questoesToolStripMenuItem = new ToolStripMenuItem();
-            testesToolStripMenuItem = new ToolStripMenuItem();
-            duplicarOsTestesToolStripMenuItem = new ToolStripMenuItem();
-            detalhesDosTestesToolStripMenuItem = new ToolStripMenuItem();
+            questoesMenuItem = new ToolStripMenuItem();
+            testesMenuItem = new ToolStripMenuItem();
+            duplicarOsTestesMenuItem = new ToolStripMenuItem();
+            detalhesDosTestesMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             labelRodape = new ToolStripStatusLabel();
             barraFerramentas = new ToolStrip();
@@ -49,10 +49,6 @@ namespace GerardorDeTestes.WinApp
             toolStripSeparator3 = new ToolStripSeparator();
             btnVisualizarDetalheTeste = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
-            btnVisualizarAlugueisCliente = new ToolStripButton();
-            btnConcluirAluguel = new ToolStripButton();
-            btnConfigurarDescontos = new ToolStripButton();
-            toolStripSeparator5 = new ToolStripSeparator();
             labelTipoCadastro = new ToolStripLabel();
             panelRegistros = new Panel();
             menuStrip1.SuspendLayout();
@@ -72,7 +68,7 @@ namespace GerardorDeTestes.WinApp
             // 
             // cadastrosMenuItem
             // 
-            cadastrosMenuItem.DropDownItems.AddRange(new ToolStripItem[] { disciplinaMenuItem, materiasMenuItem, questoesToolStripMenuItem, testesToolStripMenuItem });
+            cadastrosMenuItem.DropDownItems.AddRange(new ToolStripItem[] { disciplinaMenuItem, materiasMenuItem, questoesMenuItem, testesMenuItem });
             cadastrosMenuItem.Name = "cadastrosMenuItem";
             cadastrosMenuItem.Size = new Size(71, 20);
             cadastrosMenuItem.Text = "Cadastros";
@@ -90,30 +86,31 @@ namespace GerardorDeTestes.WinApp
             materiasMenuItem.Size = new Size(180, 22);
             materiasMenuItem.Text = "Materias";
             // 
-            // questoesToolStripMenuItem
+            // questoesMenuItem
             // 
-            questoesToolStripMenuItem.Name = "questoesToolStripMenuItem";
-            questoesToolStripMenuItem.Size = new Size(180, 22);
-            questoesToolStripMenuItem.Text = "Questoes";
+            questoesMenuItem.Name = "questoesMenuItem";
+            questoesMenuItem.Size = new Size(180, 22);
+            questoesMenuItem.Text = "Questoes";
+            questoesMenuItem.Click += questoesMenuItem_Click;
             // 
-            // testesToolStripMenuItem
+            // testesMenuItem
             // 
-            testesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { duplicarOsTestesToolStripMenuItem, detalhesDosTestesToolStripMenuItem });
-            testesToolStripMenuItem.Name = "testesToolStripMenuItem";
-            testesToolStripMenuItem.Size = new Size(180, 22);
-            testesToolStripMenuItem.Text = "Testes";
+            testesMenuItem.DropDownItems.AddRange(new ToolStripItem[] { duplicarOsTestesMenuItem, detalhesDosTestesMenuItem });
+            testesMenuItem.Name = "testesMenuItem";
+            testesMenuItem.Size = new Size(180, 22);
+            testesMenuItem.Text = "Testes";
             // 
-            // duplicarOsTestesToolStripMenuItem
+            // duplicarOsTestesMenuItem
             // 
-            duplicarOsTestesToolStripMenuItem.Name = "duplicarOsTestesToolStripMenuItem";
-            duplicarOsTestesToolStripMenuItem.Size = new Size(175, 22);
-            duplicarOsTestesToolStripMenuItem.Text = "Duplicar os Testes";
+            duplicarOsTestesMenuItem.Name = "duplicarOsTestesMenuItem";
+            duplicarOsTestesMenuItem.Size = new Size(175, 22);
+            duplicarOsTestesMenuItem.Text = "Duplicar os Testes";
             // 
-            // detalhesDosTestesToolStripMenuItem
+            // detalhesDosTestesMenuItem
             // 
-            detalhesDosTestesToolStripMenuItem.Name = "detalhesDosTestesToolStripMenuItem";
-            detalhesDosTestesToolStripMenuItem.Size = new Size(175, 22);
-            detalhesDosTestesToolStripMenuItem.Text = "Detalhes dos Testes";
+            detalhesDosTestesMenuItem.Name = "detalhesDosTestesMenuItem";
+            detalhesDosTestesMenuItem.Size = new Size(175, 22);
+            detalhesDosTestesMenuItem.Text = "Detalhes dos Testes";
             // 
             // statusStrip1
             // 
@@ -135,7 +132,7 @@ namespace GerardorDeTestes.WinApp
             // 
             barraFerramentas.Enabled = false;
             barraFerramentas.ImageScalingSize = new Size(20, 20);
-            barraFerramentas.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator2, btnDuplicarTestes, toolStripSeparator3, btnVisualizarDetalheTeste, toolStripSeparator1, btnVisualizarAlugueisCliente, btnConcluirAluguel, btnConfigurarDescontos, toolStripSeparator5, labelTipoCadastro });
+            barraFerramentas.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator2, btnDuplicarTestes, toolStripSeparator3, btnVisualizarDetalheTeste, toolStripSeparator1, labelTipoCadastro });
             barraFerramentas.Location = new Point(0, 24);
             barraFerramentas.Name = "barraFerramentas";
             barraFerramentas.Size = new Size(800, 45);
@@ -208,38 +205,6 @@ namespace GerardorDeTestes.WinApp
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 45);
             // 
-            // btnVisualizarAlugueisCliente
-            // 
-            btnVisualizarAlugueisCliente.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnVisualizarAlugueisCliente.ImageScaling = ToolStripItemImageScaling.None;
-            btnVisualizarAlugueisCliente.ImageTransparentColor = Color.Magenta;
-            btnVisualizarAlugueisCliente.Name = "btnVisualizarAlugueisCliente";
-            btnVisualizarAlugueisCliente.Padding = new Padding(7);
-            btnVisualizarAlugueisCliente.Size = new Size(23, 42);
-            // 
-            // btnConcluirAluguel
-            // 
-            btnConcluirAluguel.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnConcluirAluguel.ImageScaling = ToolStripItemImageScaling.None;
-            btnConcluirAluguel.ImageTransparentColor = Color.Magenta;
-            btnConcluirAluguel.Name = "btnConcluirAluguel";
-            btnConcluirAluguel.Padding = new Padding(7);
-            btnConcluirAluguel.Size = new Size(23, 42);
-            // 
-            // btnConfigurarDescontos
-            // 
-            btnConfigurarDescontos.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnConfigurarDescontos.ImageScaling = ToolStripItemImageScaling.None;
-            btnConfigurarDescontos.ImageTransparentColor = Color.Magenta;
-            btnConfigurarDescontos.Name = "btnConfigurarDescontos";
-            btnConfigurarDescontos.Padding = new Padding(7);
-            btnConfigurarDescontos.Size = new Size(23, 42);
-            // 
-            // toolStripSeparator5
-            // 
-            toolStripSeparator5.Name = "toolStripSeparator5";
-            toolStripSeparator5.Size = new Size(6, 45);
-            // 
             // labelTipoCadastro
             // 
             labelTipoCadastro.Name = "labelTipoCadastro";
@@ -285,7 +250,7 @@ namespace GerardorDeTestes.WinApp
         private ToolStripMenuItem disciplinaMenuItem;
         private ToolStripMenuItem materiasMenuItem;
         private ToolStripMenuItem tarefasMenuItem;
-        private ToolStripMenuItem questoesToolStripMenuItem;
+        private ToolStripMenuItem questoesMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel labelRodape;
         private ToolStrip barraFerramentas;
@@ -299,12 +264,8 @@ namespace GerardorDeTestes.WinApp
         private ToolStripButton btnDuplicarTestes;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripButton btnVisualizarDetalheTeste;
-        private ToolStripButton btnConfigurarDescontos;
-        private ToolStripSeparator toolStripSeparator5;
-        private ToolStripButton btnVisualizarAlugueisCliente;
-        private ToolStripButton btnConcluirAluguel;
-        private ToolStripMenuItem testesToolStripMenuItem;
-        private ToolStripMenuItem duplicarOsTestesToolStripMenuItem;
-        private ToolStripMenuItem detalhesDosTestesToolStripMenuItem;
+        private ToolStripMenuItem testesMenuItem;
+        private ToolStripMenuItem duplicarOsTestesMenuItem;
+        private ToolStripMenuItem detalhesDosTestesMenuItem;
     }
 }
