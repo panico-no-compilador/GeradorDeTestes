@@ -36,6 +36,8 @@ namespace GerardorDeTestes.WinApp
             materiasMenuItem = new ToolStripMenuItem();
             questoesToolStripMenuItem = new ToolStripMenuItem();
             testesToolStripMenuItem = new ToolStripMenuItem();
+            duplicarOsTestesToolStripMenuItem = new ToolStripMenuItem();
+            detalhesDosTestesToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             labelRodape = new ToolStripStatusLabel();
             barraFerramentas = new ToolStrip();
@@ -53,8 +55,6 @@ namespace GerardorDeTestes.WinApp
             toolStripSeparator5 = new ToolStripSeparator();
             labelTipoCadastro = new ToolStripLabel();
             panelRegistros = new Panel();
-            duplicarOsTestesToolStripMenuItem = new ToolStripMenuItem();
-            detalhesDosTestesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             barraFerramentas.SuspendLayout();
@@ -80,27 +80,40 @@ namespace GerardorDeTestes.WinApp
             // disciplinaMenuItem
             // 
             disciplinaMenuItem.Name = "disciplinaMenuItem";
-            disciplinaMenuItem.Size = new Size(125, 22);
+            disciplinaMenuItem.Size = new Size(180, 22);
             disciplinaMenuItem.Text = "Disciplina";
+            disciplinaMenuItem.Click += disciplinaMenuItem_Click;
             // 
             // materiasMenuItem
             // 
             materiasMenuItem.Name = "materiasMenuItem";
-            materiasMenuItem.Size = new Size(125, 22);
+            materiasMenuItem.Size = new Size(180, 22);
             materiasMenuItem.Text = "Materias";
             // 
             // questoesToolStripMenuItem
             // 
             questoesToolStripMenuItem.Name = "questoesToolStripMenuItem";
-            questoesToolStripMenuItem.Size = new Size(125, 22);
+            questoesToolStripMenuItem.Size = new Size(180, 22);
             questoesToolStripMenuItem.Text = "Questoes";
             // 
             // testesToolStripMenuItem
             // 
             testesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { duplicarOsTestesToolStripMenuItem, detalhesDosTestesToolStripMenuItem });
             testesToolStripMenuItem.Name = "testesToolStripMenuItem";
-            testesToolStripMenuItem.Size = new Size(125, 22);
+            testesToolStripMenuItem.Size = new Size(180, 22);
             testesToolStripMenuItem.Text = "Testes";
+            // 
+            // duplicarOsTestesToolStripMenuItem
+            // 
+            duplicarOsTestesToolStripMenuItem.Name = "duplicarOsTestesToolStripMenuItem";
+            duplicarOsTestesToolStripMenuItem.Size = new Size(175, 22);
+            duplicarOsTestesToolStripMenuItem.Text = "Duplicar os Testes";
+            // 
+            // detalhesDosTestesToolStripMenuItem
+            // 
+            detalhesDosTestesToolStripMenuItem.Name = "detalhesDosTestesToolStripMenuItem";
+            detalhesDosTestesToolStripMenuItem.Size = new Size(175, 22);
+            detalhesDosTestesToolStripMenuItem.Text = "Detalhes dos Testes";
             // 
             // statusStrip1
             // 
@@ -138,6 +151,7 @@ namespace GerardorDeTestes.WinApp
             btnInserir.Name = "btnInserir";
             btnInserir.Padding = new Padding(7);
             btnInserir.Size = new Size(42, 42);
+            btnInserir.Click += btnInserir_Click;
             // 
             // btnEditar
             // 
@@ -240,18 +254,6 @@ namespace GerardorDeTestes.WinApp
             panelRegistros.Name = "panelRegistros";
             panelRegistros.Size = new Size(800, 359);
             panelRegistros.TabIndex = 3;
-            // 
-            // duplicarOsTestesToolStripMenuItem
-            // 
-            duplicarOsTestesToolStripMenuItem.Name = "duplicarOsTestesToolStripMenuItem";
-            duplicarOsTestesToolStripMenuItem.Size = new Size(180, 22);
-            duplicarOsTestesToolStripMenuItem.Text = "Duplicar os Testes";
-            // 
-            // detalhesDosTestesToolStripMenuItem
-            // 
-            detalhesDosTestesToolStripMenuItem.Name = "detalhesDosTestesToolStripMenuItem";
-            detalhesDosTestesToolStripMenuItem.Size = new Size(180, 22);
-            detalhesDosTestesToolStripMenuItem.Text = "Detalhes dos Testes";
             // 
             // TelaPrincipalForm
             // 
