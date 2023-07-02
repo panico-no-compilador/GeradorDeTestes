@@ -51,6 +51,7 @@ namespace GerardorDeTestes.WinApp
             toolStripSeparator1 = new ToolStripSeparator();
             labelTipoCadastro = new ToolStripLabel();
             panelRegistros = new Panel();
+            novoTesteMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             barraFerramentas.SuspendLayout();
@@ -95,7 +96,7 @@ namespace GerardorDeTestes.WinApp
             // 
             // testesMenuItem
             // 
-            testesMenuItem.DropDownItems.AddRange(new ToolStripItem[] { duplicarOsTestesMenuItem, detalhesDosTestesMenuItem });
+            testesMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoTesteMenuItem, duplicarOsTestesMenuItem, detalhesDosTestesMenuItem });
             testesMenuItem.Name = "testesMenuItem";
             testesMenuItem.Size = new Size(180, 22);
             testesMenuItem.Text = "Testes";
@@ -103,13 +104,13 @@ namespace GerardorDeTestes.WinApp
             // duplicarOsTestesMenuItem
             // 
             duplicarOsTestesMenuItem.Name = "duplicarOsTestesMenuItem";
-            duplicarOsTestesMenuItem.Size = new Size(175, 22);
+            duplicarOsTestesMenuItem.Size = new Size(180, 22);
             duplicarOsTestesMenuItem.Text = "Duplicar os Testes";
             // 
             // detalhesDosTestesMenuItem
             // 
             detalhesDosTestesMenuItem.Name = "detalhesDosTestesMenuItem";
-            detalhesDosTestesMenuItem.Size = new Size(175, 22);
+            detalhesDosTestesMenuItem.Size = new Size(180, 22);
             detalhesDosTestesMenuItem.Text = "Detalhes dos Testes";
             // 
             // statusStrip1
@@ -220,6 +221,13 @@ namespace GerardorDeTestes.WinApp
             panelRegistros.Size = new Size(800, 359);
             panelRegistros.TabIndex = 3;
             // 
+            // novoTesteMenuItem
+            // 
+            novoTesteMenuItem.Name = "novoTesteMenuItem";
+            novoTesteMenuItem.Size = new Size(180, 22);
+            novoTesteMenuItem.Text = "Novo Teste";
+            novoTesteMenuItem.Click += novoTesteMenuItem_Click;
+            // 
             // TelaPrincipalForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -267,5 +275,6 @@ namespace GerardorDeTestes.WinApp
         private ToolStripMenuItem testesMenuItem;
         private ToolStripMenuItem duplicarOsTestesMenuItem;
         private ToolStripMenuItem detalhesDosTestesMenuItem;
+        private ToolStripMenuItem novoTesteMenuItem;
     }
 }
