@@ -85,6 +85,7 @@ namespace GerardorDeTestes.WinApp
             materiasMenuItem.Name = "materiasMenuItem";
             materiasMenuItem.Size = new Size(180, 22);
             materiasMenuItem.Text = "Materias";
+            materiasMenuItem.Click += materiasMenuItem_Click;
             // 
             // questoesMenuItem
             // 

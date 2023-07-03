@@ -1,5 +1,6 @@
 using GerardorDeTestes.WinApp.Compartilhado;
 using GerardorDeTestes.WinApp.ModuloDisciplina;
+using GerardorDeTestes.WinApp.ModuloMateria;
 using GerardorDeTestes.WinApp.ModuloQuestoes;
 
 namespace GerardorDeTestes.WinApp
@@ -20,6 +21,11 @@ namespace GerardorDeTestes.WinApp
         private void questoesMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorQuestoes();
+            ConfigurarTelaPrincipal(controlador);
+        }
+        private void materiasMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorMateria();
             ConfigurarTelaPrincipal(controlador);
         }
 
@@ -59,5 +65,6 @@ namespace GerardorDeTestes.WinApp
             controlador.Inserir();
         }
 
+       
     }
 }
