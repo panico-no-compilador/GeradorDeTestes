@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GeradorDeTestes.Dominio.ModuloDisciplina;
 using GerardorDeTestes.WinApp.Compartilhado;
 
 namespace GerardorDeTestes.WinApp.ModuloDisciplina
 {
     internal class ControladorDisciplina : ControladorBase
     {
-        private TabelaDisciplinaControl tabelaDisciplinaControl;
-       public override string ToolTipInserir { get { return "Inserir nova Disciplina"; } }
+        private TabelaDisciplinaControl tabelaDisciplina;
+        private IRepositorioDisciplina repositorioDisciplina;
+        public ControladorDisciplina(IRepositorioDisciplina repositorioDisciplina)
+        {
+            this.repositorioDisciplina = repositorioDisciplina;
+        }
+        public override string ToolTipInserir { get { return "Inserir nova Disciplina"; } }
         public override string ToolTipEditar { get { return "Editar Disciplina existente"; } }
         public override string ToolTipExcluir { get { return "Excluir Disciplina existente"; } }
 
@@ -32,12 +38,25 @@ namespace GerardorDeTestes.WinApp.ModuloDisciplina
 
             if (opcaoEscolhida == DialogResult.OK)
             {
+                Disciplina disciplina = telaDisciplina.ObterDisciplina();
+                repositorioDisciplina.Inserir(disciplina);
             }
+            CarregarDisciplinas();
         }
+        private void CarregarDisciplinas()
+        {
+            List<Disciplina> disciplinas = repositorioDisciplina.SelecionarTodos();
 
+            tabelaDisciplina.AtualizarRegistros(disciplinas);
+        }
         public override UserControl ObterListagem()
         {
-            throw new NotImplementedException();
+            if (tabelaDisciplina == null)
+                tabelaDisciplina = new TabelaDisciplinaControl();
+
+            CarregarDisciplinas();
+
+            return tabelaDisciplina;
         }
 
         public override string ObterTipoCadastro()

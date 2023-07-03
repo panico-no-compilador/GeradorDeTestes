@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Dominio", "2 - Dominio"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infraesturura", "3 - Infraesturura", "{28B8A07D-675A-466C-88B1-5FD066DFE96E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerardorDeTestes.WinApp", "GerardorDeTestes.WinApp\GerardorDeTestes.WinApp.csproj", "{047590D9-8661-49BD-803A-78AD07153FB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerardorDeTestes.WinApp", "GerardorDeTestes.WinApp\GerardorDeTestes.WinApp.csproj", "{047590D9-8661-49BD-803A-78AD07153FB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeradorDeTestes.Dominio", "GeradorDeTestes.Dominio\GeradorDeTestes.Dominio.csproj", "{F5837771-98EC-484A-9F88-16E8D805115B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeradorDeTestes.Dominio", "GeradorDeTestes.Dominio\GeradorDeTestes.Dominio.csproj", "{F5837771-98EC-484A-9F88-16E8D805115B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeradorDeTestes.Infra.Dados.Sql", "GeradorDeTestes.Infra.Dados.Sql\GeradorDeTestes.Infra.Dados.Sql.csproj", "{CC0D2F7C-0342-4868-B336-257BB6B60C4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeradorDeTestes.Infra.Dados.Sql", "GeradorDeTestes.Infra.Dados.Sql\GeradorDeTestes.Infra.Dados.Sql.csproj", "{CC0D2F7C-0342-4868-B336-257BB6B60C4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
