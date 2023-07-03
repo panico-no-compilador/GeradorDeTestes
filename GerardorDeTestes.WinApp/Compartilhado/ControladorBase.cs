@@ -11,6 +11,8 @@ namespace GerardorDeTestes.WinApp.Compartilhado
         public abstract string ToolTipInserir { get; }
         public abstract string ToolTipEditar { get; }
         public abstract string ToolTipExcluir { get; }
+        public virtual string ToolTipDuplicarTestes { get; }
+        public virtual string ToolTipVisualizarTestes { get; }
 
 
         public abstract void Inserir();

@@ -16,23 +16,23 @@ namespace GerardorDeTestes.WinApp
         private void disciplinaMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorDisciplina();
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(controlador, false);
         }
         private void questoesMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorQuestoes();
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(controlador, false);
         }
-        private void novoTesteMenuItem_Click(object sender, EventArgs e)
+        private void testesMenuItem_Click(object sender, EventArgs e)
         {
             controlador = new ControladorTeste();
-            ConfigurarTelaPrincipal(controlador);
+            ConfigurarTelaPrincipal(controlador, true);
         }
 
-        private void ConfigurarTelaPrincipal(ControladorBase controlador)
+        private void ConfigurarTelaPrincipal(ControladorBase controlador, bool temTeste)
         {
             labelTipoCadastro.Text = controlador.ObterTipoCadastro();
-            ConfigurarBarraFerramentas(controlador);
+            ConfigurarBarraFerramentas(controlador, temTeste);
             //ConfigurarListagem(controlador);
         }
 
@@ -41,20 +41,40 @@ namespace GerardorDeTestes.WinApp
             throw new NotImplementedException();
         }
 
-        private void ConfigurarBarraFerramentas(ControladorBase controlador)
+        private void ConfigurarBarraFerramentas(ControladorBase controlador, bool temTeste)
         {
             barraFerramentas.Enabled = true;
-            ConfigurarToolTips(controlador);
-            ConfigurarEstados(controlador);
+            ConfigurarToolTips(controlador, temTeste);
+            ConfigurarEstados(controlador, temTeste);
         }
 
-        private void ConfigurarEstados(ControladorBase controlador)
+        private void ConfigurarEstados(ControladorBase controlador, bool temTeste)
         {
-            btnInserir.Enabled = true;
+            if (temTeste)
+            {
+                btnDuplicarTestes.Enabled = true;
+                btnVisualizarDetalheTeste.Enabled = true;
+                btnEditar.Enabled = false;
+                btnInserir.Enabled = true;
+                btnExcluir.Enabled = true;
+            }
+            else
+            {
+                btnDuplicarTestes.Enabled = false;
+                btnVisualizarDetalheTeste.Enabled = false;
+                btnInserir.Enabled = true;
+                btnEditar.Enabled = true;
+                btnExcluir.Enabled = true;
+            }
         }
 
-        private void ConfigurarToolTips(ControladorBase controlador)
+        private void ConfigurarToolTips(ControladorBase controlador, bool temTeste)
         {
+            if (temTeste)
+            {
+                btnDuplicarTestes.ToolTipText = controlador.ToolTipDuplicarTestes;
+                btnVisualizarDetalheTeste.ToolTipText = controlador.ToolTipVisualizarTestes;
+            }
             btnInserir.ToolTipText = controlador.ToolTipInserir;
             btnEditar.ToolTipText = controlador.ToolTipEditar;
             btnExcluir.ToolTipText = controlador.ToolTipExcluir;

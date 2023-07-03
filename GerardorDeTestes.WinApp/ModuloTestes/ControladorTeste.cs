@@ -7,6 +7,8 @@ namespace GerardorDeTestes.WinApp.ModuloTestes
         public override string ToolTipInserir { get { return "Inserir novo Teste"; } }
         public override string ToolTipEditar { get { return "Editar Testes existente"; } }
         public override string ToolTipExcluir { get { return "Excluir Testes existente"; } }
+        public override string ToolTipDuplicarTestes { get { return "Duplicar Testes "; } }
+        public override string ToolTipVisualizarTestes { get { return "Visualizar Testes "; } }
 
         public override void Editar()
         {
