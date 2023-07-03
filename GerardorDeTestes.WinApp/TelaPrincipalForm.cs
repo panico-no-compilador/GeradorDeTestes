@@ -1,3 +1,5 @@
+using GeradorDeTestes.Dominio.ModuloDisciplina;
+using GeradorDeTestes.Infra.Dados.Sql.ModuloDisciplina;
 using GerardorDeTestes.WinApp.Compartilhado;
 using GerardorDeTestes.WinApp.ModuloDisciplina;
 using GerardorDeTestes.WinApp.ModuloMateria;
@@ -7,15 +9,31 @@ namespace GerardorDeTestes.WinApp
 {
     public partial class TelaPrincipalForm : Form
     {
+        private static TelaPrincipalForm telaPrincipal;
         private ControladorBase controlador;
+        private IRepositorioDisciplina repositorioDisciplina = new RepositorioDisciplinaEmSql();
+
         public TelaPrincipalForm()
         {
             InitializeComponent();
         }
+        public static TelaPrincipalForm Instancia
+        {
+            get
+            {
+                if (telaPrincipal == null)
+                    telaPrincipal = new TelaPrincipalForm();
 
+                return telaPrincipal;
+            }
+        }
+        public void AtualizarRodape(string mensagem)
+        {
+            labelRodape.Text = mensagem;
+        }
         private void disciplinaMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorDisciplina();
+            controlador = new ControladorDisciplina(repositorioDisciplina);
             ConfigurarTelaPrincipal(controlador);
         }
         private void questoesMenuItem_Click(object sender, EventArgs e)
@@ -33,12 +51,15 @@ namespace GerardorDeTestes.WinApp
         {
             labelTipoCadastro.Text = controlador.ObterTipoCadastro();
             ConfigurarBarraFerramentas(controlador);
-            //ConfigurarListagem(controlador);
+            ConfigurarListagem(controlador);
         }
 
         private void ConfigurarListagem(ControladorBase controlador)
         {
-            throw new NotImplementedException();
+            UserControl listagem = controlador.ObterListagem();
+            listagem.Dock = DockStyle.Fill;
+            panelRegistros.Controls.Clear();
+            panelRegistros.Controls.Add(listagem);
         }
 
         private void ConfigurarBarraFerramentas(ControladorBase controlador)

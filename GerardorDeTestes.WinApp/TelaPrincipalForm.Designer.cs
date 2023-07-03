@@ -76,14 +76,14 @@ namespace GerardorDeTestes.WinApp
             // disciplinaMenuItem
             // 
             disciplinaMenuItem.Name = "disciplinaMenuItem";
-            disciplinaMenuItem.Size = new Size(180, 22);
+            disciplinaMenuItem.Size = new Size(125, 22);
             disciplinaMenuItem.Text = "Disciplina";
             disciplinaMenuItem.Click += disciplinaMenuItem_Click;
             // 
             // materiasMenuItem
             // 
             materiasMenuItem.Name = "materiasMenuItem";
-            materiasMenuItem.Size = new Size(180, 22);
+            materiasMenuItem.Size = new Size(125, 22);
             materiasMenuItem.Text = "Materias";
             materiasMenuItem.Click += materiasMenuItem_Click;
             // 

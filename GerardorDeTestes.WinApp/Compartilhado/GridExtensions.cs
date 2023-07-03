@@ -22,6 +22,7 @@ namespace GerardorDeTestes.WinApp.Compartilhado
             };
 
             grid.AlternatingRowsDefaultCellStyle = linhaEscura;
+            grid.RowHeadersVisible = false;
 
             DataGridViewCellStyle linhaClara = new DataGridViewCellStyle
             {
