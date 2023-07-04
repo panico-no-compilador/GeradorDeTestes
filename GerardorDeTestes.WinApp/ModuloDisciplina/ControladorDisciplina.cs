@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GeradorDeTestes.Dominio.ModuloDisciplina;
+﻿using GeradorDeTestes.Dominio.ModuloDisciplina;
 using GerardorDeTestes.WinApp.Compartilhado;
 
 namespace GerardorDeTestes.WinApp.ModuloDisciplina
@@ -22,12 +17,34 @@ namespace GerardorDeTestes.WinApp.ModuloDisciplina
 
         public override void Editar()
         {
-            throw new NotImplementedException();
+            Disciplina Disciplina = ObterDisciplinaSelecionada();
+            if (Disciplina == null)
+            {
+                MessageBox.Show($"Selecione uma disciplina primeiro!",
+                    "Edição de Disciplinas",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
+            TelaDisciplinaForm telaCliente = new TelaDisciplinaForm();
+            telaCliente.ConfigurarTela(Disciplina);
+            DialogResult opcaoEscolhida = telaCliente.ShowDialog();
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Disciplina disciplinaAtualizada = telaCliente.ObterDisciplina();
+                repositorioDisciplina.Editar(disciplinaAtualizada.Id, disciplinaAtualizada);
+            }
+            CarregarDisciplinas();
         }
 
+        private Disciplina ObterDisciplinaSelecionada()
+        {
+            int id = tabelaDisciplina.ObterIdSelecionado();
+            return repositorioDisciplina.SelecionarPorId(id);
+        }
         public override void Excluir()
         {
-            throw new NotImplementedException();
+
         }
 
         public override void Inserir()

@@ -36,8 +36,6 @@ namespace GerardorDeTestes.WinApp
             materiasMenuItem = new ToolStripMenuItem();
             questoesMenuItem = new ToolStripMenuItem();
             testesMenuItem = new ToolStripMenuItem();
-            duplicarOsTestesMenuItem = new ToolStripMenuItem();
-            detalhesDosTestesMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             labelRodape = new ToolStripStatusLabel();
             barraFerramentas = new ToolStrip();
@@ -96,22 +94,10 @@ namespace GerardorDeTestes.WinApp
             // 
             // testesMenuItem
             // 
-            testesMenuItem.DropDownItems.AddRange(new ToolStripItem[] { duplicarOsTestesMenuItem, detalhesDosTestesMenuItem });
+
             testesMenuItem.Name = "testesMenuItem";
             testesMenuItem.Size = new Size(180, 22);
             testesMenuItem.Text = "Testes";
-            // 
-            // duplicarOsTestesMenuItem
-            // 
-            duplicarOsTestesMenuItem.Name = "duplicarOsTestesMenuItem";
-            duplicarOsTestesMenuItem.Size = new Size(175, 22);
-            duplicarOsTestesMenuItem.Text = "Duplicar os Testes";
-            // 
-            // detalhesDosTestesMenuItem
-            // 
-            detalhesDosTestesMenuItem.Name = "detalhesDosTestesMenuItem";
-            detalhesDosTestesMenuItem.Size = new Size(175, 22);
-            detalhesDosTestesMenuItem.Text = "Detalhes dos Testes";
             // 
             // statusStrip1
             // 
@@ -160,6 +146,7 @@ namespace GerardorDeTestes.WinApp
             btnEditar.Name = "btnEditar";
             btnEditar.Padding = new Padding(7);
             btnEditar.Size = new Size(42, 42);
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
@@ -266,7 +253,5 @@ namespace GerardorDeTestes.WinApp
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripButton btnVisualizarDetalheTeste;
         private ToolStripMenuItem testesMenuItem;
-        private ToolStripMenuItem duplicarOsTestesMenuItem;
-        private ToolStripMenuItem detalhesDosTestesMenuItem;
     }
 }
