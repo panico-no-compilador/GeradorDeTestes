@@ -22,6 +22,12 @@ namespace GerardorDeTestes.WinApp.ModuloDisciplina
             return disciplina;
         }
 
+        public void ConfigurarTela(Disciplina disciplina)
+        {
+            tbId.Text = disciplina.Id.ToString();
+            tbNome.Text = disciplina.Nome.ToString();
+        }
+
         private void btnGravar_Click(object sender, EventArgs e)
         {
             Disciplina Disciplina = ObterDisciplina();

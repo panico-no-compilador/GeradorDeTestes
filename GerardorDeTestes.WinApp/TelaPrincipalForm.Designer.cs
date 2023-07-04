@@ -93,7 +93,7 @@ namespace GerardorDeTestes.WinApp
             // testesToolStripMenuItem
             // 
             testesToolStripMenuItem.Name = "testesToolStripMenuItem";
-            testesToolStripMenuItem.Size = new Size(180, 22);
+            testesToolStripMenuItem.Size = new Size(125, 22);
             testesToolStripMenuItem.Text = "Testes";
             // 
             // statusStrip1
@@ -143,6 +143,7 @@ namespace GerardorDeTestes.WinApp
             btnEditar.Name = "btnEditar";
             btnEditar.Padding = new Padding(7);
             btnEditar.Size = new Size(42, 42);
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
