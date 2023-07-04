@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TxtId = new TextBox();
+            txtId = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            TxtNome = new TextBox();
-            CbDisciplina = new ComboBox();
+            txtNome = new TextBox();
+            cbDisciplina = new ComboBox();
             label4 = new Label();
-            RBtnSerie1 = new RadioButton();
-            RBtnSerie2 = new RadioButton();
+            rBtnSerie1 = new RadioButton();
+            rBtnSerie2 = new RadioButton();
             btnCancelar = new Button();
             button1 = new Button();
             SuspendLayout();
             // 
-            // TxtId
+            // txtId
             // 
-            TxtId.Location = new Point(88, 30);
-            TxtId.Name = "TxtId";
-            TxtId.Size = new Size(58, 23);
-            TxtId.TabIndex = 0;
+            txtId.Location = new Point(88, 30);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(58, 23);
+            txtId.TabIndex = 0;
             // 
             // label1
             // 
@@ -75,20 +75,20 @@
             label3.TabIndex = 4;
             label3.Text = "Disciplina:";
             // 
-            // TxtNome
+            // txtNome
             // 
-            TxtNome.Location = new Point(88, 71);
-            TxtNome.Name = "TxtNome";
-            TxtNome.Size = new Size(202, 23);
-            TxtNome.TabIndex = 2;
+            txtNome.Location = new Point(88, 71);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(202, 23);
+            txtNome.TabIndex = 2;
             // 
-            // CbDisciplina
+            // cbDisciplina
             // 
-            CbDisciplina.FormattingEnabled = true;
-            CbDisciplina.Location = new Point(88, 107);
-            CbDisciplina.Name = "CbDisciplina";
-            CbDisciplina.Size = new Size(121, 23);
-            CbDisciplina.TabIndex = 5;
+            cbDisciplina.FormattingEnabled = true;
+            cbDisciplina.Location = new Point(88, 107);
+            cbDisciplina.Name = "cbDisciplina";
+            cbDisciplina.Size = new Size(121, 23);
+            cbDisciplina.TabIndex = 5;
             // 
             // label4
             // 
@@ -99,31 +99,32 @@
             label4.TabIndex = 6;
             label4.Text = "Série:";
             // 
-            // RBtnSerie1
+            // rBtnSerie1
             // 
-            RBtnSerie1.AutoSize = true;
-            RBtnSerie1.Location = new Point(88, 139);
-            RBtnSerie1.Name = "RBtnSerie1";
-            RBtnSerie1.Size = new Size(36, 19);
-            RBtnSerie1.TabIndex = 7;
-            RBtnSerie1.TabStop = true;
-            RBtnSerie1.Text = "1°";
-            RBtnSerie1.UseVisualStyleBackColor = true;
+            rBtnSerie1.AutoSize = true;
+            rBtnSerie1.Location = new Point(88, 139);
+            rBtnSerie1.Name = "rBtnSerie1";
+            rBtnSerie1.Size = new Size(36, 19);
+            rBtnSerie1.TabIndex = 7;
+            rBtnSerie1.TabStop = true;
+            rBtnSerie1.Text = "1°";
+            rBtnSerie1.UseVisualStyleBackColor = true;
+            
             // 
-            // RBtnSerie2
+            // rBtnSerie2
             // 
-            RBtnSerie2.AutoSize = true;
-            RBtnSerie2.Location = new Point(143, 139);
-            RBtnSerie2.Name = "RBtnSerie2";
-            RBtnSerie2.Size = new Size(36, 19);
-            RBtnSerie2.TabIndex = 8;
-            RBtnSerie2.TabStop = true;
-            RBtnSerie2.Text = "2º";
-            RBtnSerie2.UseVisualStyleBackColor = true;
+            rBtnSerie2.AutoSize = true;
+            rBtnSerie2.Location = new Point(143, 139);
+            rBtnSerie2.Name = "rBtnSerie2";
+            rBtnSerie2.Size = new Size(36, 19);
+            rBtnSerie2.TabIndex = 8;
+            rBtnSerie2.TabStop = true;
+            rBtnSerie2.Text = "2º";
+            rBtnSerie2.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(291, 176);
+            btnCancelar.Location = new Point(388, 176);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(75, 23);
             btnCancelar.TabIndex = 9;
@@ -132,12 +133,13 @@
             // 
             // button1
             // 
-            button1.Location = new Point(397, 176);
+            button1.Location = new Point(290, 176);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 10;
             button1.Text = "Gravar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // TelaMateriaForm
             // 
@@ -146,15 +148,15 @@
             ClientSize = new Size(484, 211);
             Controls.Add(button1);
             Controls.Add(btnCancelar);
-            Controls.Add(RBtnSerie2);
-            Controls.Add(RBtnSerie1);
+            Controls.Add(rBtnSerie2);
+            Controls.Add(rBtnSerie1);
             Controls.Add(label4);
-            Controls.Add(CbDisciplina);
+            Controls.Add(cbDisciplina);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(TxtNome);
+            Controls.Add(txtNome);
             Controls.Add(label1);
-            Controls.Add(TxtId);
+            Controls.Add(txtId);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -168,15 +170,15 @@
 
         #endregion
 
-        private TextBox TxtId;
+        private TextBox txtId;
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox TxtNome;
-        private ComboBox CbDisciplina;
+        private TextBox txtNome;
+        private ComboBox cbDisciplina;
         private Label label4;
-        private RadioButton RBtnSerie1;
-        private RadioButton RBtnSerie2;
+        private RadioButton rBtnSerie1;
+        private RadioButton rBtnSerie2;
         private Button btnCancelar;
         private Button button1;
     }

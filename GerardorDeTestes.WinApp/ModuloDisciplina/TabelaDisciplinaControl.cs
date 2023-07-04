@@ -1,6 +1,5 @@
 ﻿using GeradorDeTestes.Dominio.ModuloDisciplina;
 using GerardorDeTestes.WinApp.Compartilhado;
-
 namespace GerardorDeTestes.WinApp.ModuloDisciplina
 {
     public partial class TabelaDisciplinaControl : UserControl
