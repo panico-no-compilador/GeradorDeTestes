@@ -35,6 +35,7 @@
             // tabelaMateria
             // 
             tabelaMateria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tabelaMateria.Dock = DockStyle.Fill;
             tabelaMateria.Location = new Point(0, 0);
             tabelaMateria.Name = "tabelaMateria";
             tabelaMateria.RowTemplate.Height = 25;

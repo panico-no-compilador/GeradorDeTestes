@@ -20,8 +20,8 @@ namespace GeradorDeTestes.Infra.Dados.Sql.ModuloMateria
         protected override string sqlSelecionarTodos =>      
             @"Select
                 MT.ID AS MATERIA_ID,
-                MT.ID AS MATERIA_NOME,
-                MT.ID AS MATERIA_SERIE,
+                MT.NOME AS MATERIA_NOME,
+                MT.SERIE AS MATERIA_SERIE,
 
                 D.ID AS DISCIPLINA_ID,
                 D.NOME AS DISCIPLINA_NOME
