@@ -44,7 +44,30 @@ namespace GerardorDeTestes.WinApp.ModuloDisciplina
         }
         public override void Excluir()
         {
-
+            Disciplina disciplina = ObterDisciplinaSelecionada();
+            if (disciplina == null)
+            {
+                MessageBox.Show
+                    (
+                         "Selecione uma Disciplina Primeiro!",
+                         "Exclusão de Disciplinas",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Exclamation
+                    );
+                return;
+            }
+            DialogResult opcaoEscolhida = MessageBox.Show
+                (
+                    $"Deseja excluir a disciplina {disciplina.Nome}?",
+                    "Exclusão de Disciplinas",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question
+                );
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                repositorioDisciplina.Excluir(disciplina);
+                CarregarDisciplinas();
+            }
         }
 
         public override void Inserir()
