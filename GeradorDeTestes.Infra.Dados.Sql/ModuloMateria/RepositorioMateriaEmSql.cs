@@ -17,18 +17,21 @@ namespace GeradorDeTestes.Infra.Dados.Sql.ModuloMateria
            CONSTRAINT[PK_TbMateria] PRIMARY KEY CLUSTERED([Id] ASC),
            CONSTRAINT[FK_TbMateria_TbDisciplina] FOREIGN KEY([Disciplina_Id]) REFERENCES[dbo].[TbDisciplina] ([Id]),
         )";
-        protected override string sqlSelecionarTodos =>      
+        protected override string sqlSelecionarTodos =>
             @"Select
-                MT.ID AS MATERIA_ID,
-                MT.NOME AS MATERIA_NOME,
-                MT.SERIE AS MATERIA_SERIE,
+                 M.[ID]                MATERIA_ID
+                ,M.[NOME]              MATERIA_NOME
+                ,M.[DISCIPLINA_ID]     MATERIA_DISCIPLINA_ID
+                ,M.[SERIE]             MATERIA_SERIE
 
-                D.ID AS DISCIPLINA_ID,
-                D.NOME AS DISCIPLINA_NOME
-            
-             From
-                 TBMATERIA AS MT INNER JOIN TBDISCIPLINA AS D ON
-                 MT.DISCIPLINA_ID = D.ID";
+	            ,D.[ID]                DISCIPLINA_ID
+	            ,D.[NOME]              DISCIPLINA_NOME	  
+
+                    FROM 
+
+                    [TBMATERIA] AS M INNER JOIN [TBDISCIPLINA] AS D
+                    ON
+                    M.[DISCIPLINA_ID] = D.[ID]";
 
         protected override string sqlInserir =>
            @"
@@ -55,22 +58,29 @@ namespace GeradorDeTestes.Infra.Dados.Sql.ModuloMateria
 		            [ID] = @ID";
 
         protected override string sqlExcluir =>
-            @"DELETE FROM [TBDISCIPLINA]
+            @"DELETE FROM [TBMATERIA]
 	            WHERE 
 		            [ID] = @ID";
 
-        
+
 
         protected override string sqlSelecionarPorId =>
-            @"SELECT 
+        @"SELECT 
+                 M.[ID]                MATERIA_ID
+                ,M.[NOME]              MATERIA_NOME
+                ,M.[DISCIPLINA_ID]     MATERIA_DISCIPLINA_ID
+                ,M.[SERIE]             MATERIA_SERIE
 
-	            [ID]        DISCIPLINA_ID 
-	           ,[NOME]      DISCIPLINA_NOME
-
-            FROM 
-	            [TBDISCIPLINA]
-            WHERE 
-                [ID] = @ID";
+	            ,D.[ID]                DISCIPLINA_ID
+	            ,D.[NOME]              DISCIPLINA_NOME
+			    
+                FROM 
+                [TBMATERIA] AS M INNER JOIN [TBDISCIPLINA] AS D
+                ON
+                M.[DISCIPLINA_ID] = D.[ID]
+                
+                  WHERE
+                   M.[ID] = @ID";
 
         public override Materia SelecionarPorId(int id)
         {

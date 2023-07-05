@@ -74,14 +74,14 @@ namespace GerardorDeTestes.WinApp
             // disciplinaMenuItem
             // 
             disciplinaMenuItem.Name = "disciplinaMenuItem";
-            disciplinaMenuItem.Size = new Size(125, 22);
+            disciplinaMenuItem.Size = new Size(180, 22);
             disciplinaMenuItem.Text = "Disciplina";
             disciplinaMenuItem.Click += disciplinaMenuItem_Click;
             // 
             // materiasMenuItem
             // 
             materiasMenuItem.Name = "materiasMenuItem";
-            materiasMenuItem.Size = new Size(125, 22);
+            materiasMenuItem.Size = new Size(180, 22);
             materiasMenuItem.Text = "Materias";
             materiasMenuItem.Click += materiasMenuItem_Click;
             // 
@@ -94,7 +94,6 @@ namespace GerardorDeTestes.WinApp
             // 
             // testesMenuItem
             // 
-
             testesMenuItem.Name = "testesMenuItem";
             testesMenuItem.Size = new Size(180, 22);
             testesMenuItem.Text = "Testes";
@@ -157,6 +156,7 @@ namespace GerardorDeTestes.WinApp
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Padding = new Padding(7);
             btnExcluir.Size = new Size(42, 42);
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // toolStripSeparator2
             // 

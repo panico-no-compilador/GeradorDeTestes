@@ -27,8 +27,39 @@ namespace GerardorDeTestes.WinApp.ModuloMateria
 
         public override void Excluir()
         {
-            throw new NotImplementedException();
+            Materia materia = ObterMateriaSelecionada();
+            if( materia == null)
+            {
+                MessageBox.Show
+                    (
+                         "Selecione uma Matéria Primeiro!",
+                         "Exclusão de Matérias",
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Exclamation
+                    );
+                return;
+            }
+            DialogResult opcaoEscolhida = MessageBox.Show
+                (
+                    $"Deseja excluir a materia {materia.Nome}?",
+                    "Exclusão de matérias",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question
+                ) ;
+            if(opcaoEscolhida == DialogResult.OK)
+            {
+                repositorioMateria.Excluir(materia);
+                CarregarMaterias();
+            }
+                
         }
+
+        private Materia ObterMateriaSelecionada()
+        {
+            int id = tabelaMateria.ObterIdSelecionado();
+            return repositorioMateria.SelecionarPorId(id);
+        }
+
         public override void Inserir()
         {
             List<Disciplina> disciplinas = repositorioDisciplina.SelecionarTodos();
