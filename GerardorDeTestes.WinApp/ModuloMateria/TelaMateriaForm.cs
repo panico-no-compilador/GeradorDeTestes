@@ -13,8 +13,15 @@ namespace GerardorDeTestes.WinApp.ModuloMateria
             InitializeComponent();
             PopularComboBox(disciplinas);
         }
-
-
+        public void DesabilitarId()
+        {
+            txtId.Enabled = false;
+        }
+        public void ConfigurarTela(Materia materia)
+        {
+            txtId.Text = materia.Id.ToString();
+            txtNome.Text = materia.Nome.ToString();
+        }
         private void PopularComboBox(List<Disciplina> disciplinas)
         {
             cbDisciplina.Items.Clear();

@@ -1,6 +1,8 @@
 ﻿using GeradorDeTestes.Dominio.ModuloDisciplina;
 using GeradorDeTestes.Dominio.ModuloMateria;
 using GerardorDeTestes.WinApp.Compartilhado;
+using GerardorDeTestes.WinApp.ModuloMateria;
+
 
 
 namespace GerardorDeTestes.WinApp.ModuloMateria
@@ -22,7 +24,27 @@ namespace GerardorDeTestes.WinApp.ModuloMateria
         }
         public override void Editar()
         {
-            throw new NotImplementedException();
+            List<Disciplina> disciplinas = repositorioDisciplina.SelecionarTodos();
+            TelaMateriaForm telaMateria = new TelaMateriaForm(disciplinas);
+            telaMateria.DesabilitarId();
+            Materia materia = ObterMateriaSelecionada();
+            if (materia == null)
+            {
+                MessageBox.Show($"Selecione uma matéria primeiro!",
+                    "Edição de Disciplinas",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
+            telaMateria.ConfigurarTela(materia);
+            DialogResult opcaoEscolhida = telaMateria.ShowDialog();
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Materia materiaAtualizada = telaMateria.ObterMateria();
+                repositorioMateria.Editar(materiaAtualizada.Id, materiaAtualizada);
+            }
+            CarregarMaterias();
+
         }
 
         public override void Excluir()

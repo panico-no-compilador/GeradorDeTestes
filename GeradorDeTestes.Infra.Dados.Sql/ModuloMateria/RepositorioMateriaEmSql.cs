@@ -51,9 +51,14 @@ namespace GeradorDeTestes.Infra.Dados.Sql.ModuloMateria
             ";
 
         protected override string sqlEditar =>
-           @"UPDATE [TBDISCIPLINA] 
+           @"UPDATE [TBMATERIA] 
 	            SET 
-		            [NOME] = @NOME
+                      
+		           [NOME] = @NOME
+                  ,[SERIE] = @SERIE
+                  ,[DISCIPLINA_ID] = @DISCIPLINA_ID
+                   
+                   
 	            WHERE 
 		            [ID] = @ID";
 
