@@ -18,5 +18,9 @@ namespace GerardorDeTestes.WinApp.Compartilhado
         public abstract void Excluir();
         public abstract UserControl ObterListagem();
         public abstract string ObterTipoCadastro();
+
+        public virtual void VizualizarDetalhesTestes()
+        {
+        }
     }
 }

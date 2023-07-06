@@ -34,5 +34,9 @@ namespace GerardorDeTestes.WinApp.ModuloTeste
         {
             throw new NotImplementedException();
         }
+        public override void VizualizarDetalhesTestes()
+        {
+            base.VizualizarDetalhesTestes();
+        }
     }
 }

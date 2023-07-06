@@ -74,28 +74,28 @@ namespace GerardorDeTestes.WinApp
             // disciplinaMenuItem
             // 
             disciplinaMenuItem.Name = "disciplinaMenuItem";
-            disciplinaMenuItem.Size = new Size(180, 22);
+            disciplinaMenuItem.Size = new Size(125, 22);
             disciplinaMenuItem.Text = "Disciplina";
             disciplinaMenuItem.Click += disciplinaMenuItem_Click;
             // 
             // materiasMenuItem
             // 
             materiasMenuItem.Name = "materiasMenuItem";
-            materiasMenuItem.Size = new Size(180, 22);
+            materiasMenuItem.Size = new Size(125, 22);
             materiasMenuItem.Text = "Materias";
             materiasMenuItem.Click += materiasMenuItem_Click;
             // 
             // questoesMenuItem
             // 
             questoesMenuItem.Name = "questoesMenuItem";
-            questoesMenuItem.Size = new Size(180, 22);
+            questoesMenuItem.Size = new Size(125, 22);
             questoesMenuItem.Text = "Questoes";
             questoesMenuItem.Click += questoesMenuItem_Click;
             // 
             // testesMenuItem
             // 
             testesMenuItem.Name = "testesMenuItem";
-            testesMenuItem.Size = new Size(180, 22);
+            testesMenuItem.Size = new Size(125, 22);
             testesMenuItem.Text = "Testes";
             testesMenuItem.Click += testesMenuItem_Click;
             // 
@@ -188,6 +188,7 @@ namespace GerardorDeTestes.WinApp
             btnVisualizarDetalheTeste.Name = "btnVisualizarDetalheTeste";
             btnVisualizarDetalheTeste.Padding = new Padding(7);
             btnVisualizarDetalheTeste.Size = new Size(42, 42);
+            btnVisualizarDetalheTeste.Click += btnVisualizarDetalheTeste_Click;
             // 
             // toolStripSeparator1
             // 

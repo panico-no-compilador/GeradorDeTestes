@@ -104,5 +104,9 @@ namespace GerardorDeTestes.WinApp
             controlador.Excluir();
         }
 
+        private void btnVisualizarDetalheTeste_Click(object sender, EventArgs e)
+        {
+            controlador.VizualizarDetalhesTestes();
+        }
     }
 }
