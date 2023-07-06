@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GerardorDeTestes.WinApp.Compartilhado
+﻿namespace GerardorDeTestes.WinApp.Compartilhado
 {
     public static class GridExtensions
     {
-        public static void ConfigurarGridZebrado(this DataGridView grid)
+        public static void ConfigurarGridZebrado(this DataGridView tabela)
         {
             Font font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
 
@@ -21,8 +15,8 @@ namespace GerardorDeTestes.WinApp.Compartilhado
                 SelectionForeColor = Color.Black
             };
 
-            grid.AlternatingRowsDefaultCellStyle = linhaEscura;
-            grid.RowHeadersVisible = false;
+            tabela.AlternatingRowsDefaultCellStyle = linhaEscura;
+            tabela.RowHeadersVisible = false;
 
             DataGridViewCellStyle linhaClara = new DataGridViewCellStyle
             {
@@ -32,25 +26,32 @@ namespace GerardorDeTestes.WinApp.Compartilhado
                 SelectionForeColor = Color.Black
             };
 
-            grid.RowsDefaultCellStyle = linhaClara;
+            tabela.RowsDefaultCellStyle = linhaClara;
         }
-
-        public static void ConfigurarGridSomenteLeitura(this DataGridView grid)
+        public static void CofigurarGridAlternativasQuestoes(this DataGridView tabela)
         {
-            grid.AllowUserToAddRows = false;
-            grid.AllowUserToDeleteRows = false;
+            tabela.Columns[0].Width = 50;
+            tabela.Columns[2].Width = 60;
+        }
+        public static void ConfigurarGridSomenteLeitura(this DataGridView tabela)
+        {
+            tabela.AllowUserToAddRows = false;
+            tabela.AllowUserToDeleteRows = false;
 
-            grid.BorderStyle = BorderStyle.None;
-            grid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            tabela.BorderStyle = BorderStyle.None;
+            tabela.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            tabela.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 
-            grid.MultiSelect = false;
-            grid.ReadOnly = true;
+            tabela.MultiSelect = false;
+            tabela.ReadOnly = true;
 
-            grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            grid.AutoGenerateColumns = false;
+            tabela.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            tabela.AutoGenerateColumns = false;
 
-            grid.AllowUserToResizeRows = false;
+            tabela.AllowUserToResizeRows = false;
+
+            int idCellWidth = 50;
+            tabela.Columns[0].Width = idCellWidth;
         }
     }
 }
