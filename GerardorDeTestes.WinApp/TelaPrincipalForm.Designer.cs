@@ -97,6 +97,7 @@ namespace GerardorDeTestes.WinApp
             testesMenuItem.Name = "testesMenuItem";
             testesMenuItem.Size = new Size(180, 22);
             testesMenuItem.Text = "Testes";
+            testesMenuItem.Click += testesMenuItem_Click;
             // 
             // statusStrip1
             // 

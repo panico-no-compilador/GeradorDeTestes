@@ -49,6 +49,11 @@ namespace GerardorDeTestes.WinApp
             controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
             ConfigurarTelaPrincipal(controlador);
         }
+        private void testesMenuItem_Click(object sender, EventArgs e)
+        {
+            //controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
+            //ConfigurarTelaPrincipal(controlador);
+        }
 
         private void ConfigurarTelaPrincipal(ControladorBase controlador)
         {
@@ -98,5 +103,6 @@ namespace GerardorDeTestes.WinApp
         {
             controlador.Excluir();
         }
+
     }
 }

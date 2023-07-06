@@ -28,8 +28,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ModuloTeste\" />
-  </ItemGroup>
-
 </Project>
