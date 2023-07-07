@@ -5,30 +5,14 @@ using System.Security.Principal;
 
 namespace GeradorDeTestes.Dominio.ModuloQuestoes
 {
-    namespace GeradorDeTestes.Dominio.ModuloQuestoes
-    {
-        public class Resposta
-        {
-            public string Alternativa { get; set; }
-            public bool Correto { get; set; }
-
-            public Resposta()
-            {
-
-            }
-            public Resposta(string alternativa, bool correto)
-            {
-                Alternativa = alternativa;
-                Correto = correto;
-            }
-        }
-    }
     public class Questao : EntidadeBase<Questao>
     {
         public Materia Materia { get; set; }
         public string Enunciado { get; set; }
-        public Resposta Resposta { get; set; }
+
         public List<Resposta> Alternativas { get; set; }
+        
+        public Resposta Resposta { get; set; }
 
         public Questao()
         {

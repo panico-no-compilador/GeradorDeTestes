@@ -34,7 +34,7 @@
             txtEnunciado = new TextBox();
             lbResposta = new Label();
             txtRespostaAlternativa = new TextBox();
-            btnAdicionarRespostas = new Button();
+            btnAdicionarRespostasNoDataGridView = new Button();
             btnGravar = new Button();
             btnCancelar = new Button();
             lbAlternativas = new Label();
@@ -99,15 +99,15 @@
             txtRespostaAlternativa.Size = new Size(204, 62);
             txtRespostaAlternativa.TabIndex = 5;
             // 
-            // btnAdicionarRespostas
+            // btnAdicionarRespostasNoDataGridView
             // 
-            btnAdicionarRespostas.Location = new Point(325, 197);
-            btnAdicionarRespostas.Name = "btnAdicionarRespostas";
-            btnAdicionarRespostas.Size = new Size(85, 62);
-            btnAdicionarRespostas.TabIndex = 6;
-            btnAdicionarRespostas.Text = "Adicionar";
-            btnAdicionarRespostas.UseVisualStyleBackColor = true;
-            btnAdicionarRespostas.Click += btnAdicionarRespostas_Click;
+            btnAdicionarRespostasNoDataGridView.Location = new Point(325, 197);
+            btnAdicionarRespostasNoDataGridView.Name = "btnAdicionarRespostasNoDataGridView";
+            btnAdicionarRespostasNoDataGridView.Size = new Size(85, 62);
+            btnAdicionarRespostasNoDataGridView.TabIndex = 6;
+            btnAdicionarRespostasNoDataGridView.Text = "Adicionar";
+            btnAdicionarRespostasNoDataGridView.UseVisualStyleBackColor = true;
+            btnAdicionarRespostasNoDataGridView.Click += btnAdicionarRespostasNoGridView_Click;
             // 
             // btnGravar
             // 
@@ -205,7 +205,7 @@
             Controls.Add(btnCancelar);
             Controls.Add(btnGravar);
             Controls.Add(painelRespostasAlternativas);
-            Controls.Add(btnAdicionarRespostas);
+            Controls.Add(btnAdicionarRespostasNoDataGridView);
             Controls.Add(txtRespostaAlternativa);
             Controls.Add(lbResposta);
             Controls.Add(txtEnunciado);
@@ -235,7 +235,7 @@
         private TextBox txtEnunciado;
         private TextBox txtRespostaAlternativa;
         private Panel painelRespostasAlternativas;
-        private Button btnAdicionarRespostas;
+        private Button btnAdicionarRespostasNoDataGridView;
         private Button btnGravar;
         private Button btnCancelar;
         private Button btnRemover;

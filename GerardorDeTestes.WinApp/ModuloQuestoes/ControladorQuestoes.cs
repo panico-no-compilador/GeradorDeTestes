@@ -54,7 +54,8 @@ namespace GerardorDeTestes.WinApp.ModuloQuestoes
             if (opcaoEscolhida == DialogResult.OK)
             {
                 Questao questao = telaQuestoes.ObterQuestao();
-                repositorioQuestoes.Inserir(questao);
+                List<Resposta> respostas = telaQuestoes.ObterRespostas();
+                repositorioQuestoes.Inserir(questao, respostas);
             }
             CarregarQuestoes();
         }
@@ -64,7 +65,7 @@ namespace GerardorDeTestes.WinApp.ModuloQuestoes
             if (tabelaQuestoes == null)
                 tabelaQuestoes = new TabelaQuestoesControl();
 
-            //CarregarQuestoes();
+            CarregarQuestoes();
 
             return tabelaQuestoes;
         }
