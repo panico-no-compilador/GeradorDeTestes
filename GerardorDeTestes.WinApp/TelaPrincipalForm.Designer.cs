@@ -173,6 +173,7 @@ namespace GerardorDeTestes.WinApp
             btnDuplicarTestes.Name = "btnDuplicarTestes";
             btnDuplicarTestes.Padding = new Padding(7);
             btnDuplicarTestes.Size = new Size(42, 42);
+            btnDuplicarTestes.Click += btnDuplicarTestes_Click;
             // 
             // toolStripSeparator3
             // 

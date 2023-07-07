@@ -35,10 +35,12 @@ namespace GeradorDeTestes.Dominio.ModuloMateria
             List<string> erros = new List<string>();
             if (string.IsNullOrEmpty(Nome))
                 erros.Add("O campo 'Nome' é obrigatório");
+
             if (this.Disciplina == null)
                 erros.Add("O campo 'Disciplina' é obrigatório");
             if (this.Serie == null)
                 erros.Add("O campo 'Serie' é obrigatório");
+            
             return erros.ToArray();       
         }
         public override bool Equals(object? obj)

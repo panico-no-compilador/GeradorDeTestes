@@ -20,6 +20,17 @@ namespace GerardorDeTestes.WinApp.ModuloTeste
             throw new NotImplementedException();
         }
 
+        public override void DuplicarTestes()
+        {
+            TelaDuplicarTesteForm telaDuplicarTeste = new TelaDuplicarTesteForm();
+
+            DialogResult opcaoEscolhida = telaDuplicarTeste.ShowDialog();
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+
+            }
+        }
+
         public override void Inserir()
         {
             throw new NotImplementedException();

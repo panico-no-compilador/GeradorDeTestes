@@ -51,15 +51,15 @@ namespace GerardorDeTestes.WinApp
         }
         private void testesMenuItem_Click(object sender, EventArgs e)
         {
-            //controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
-            //ConfigurarTelaPrincipal(controlador);
+            controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
+            ConfigurarTelaPrincipal(controlador);
         }
 
         private void ConfigurarTelaPrincipal(ControladorBase controlador)
         {
             labelTipoCadastro.Text = controlador.ObterTipoCadastro();
             ConfigurarBarraFerramentas(controlador);
-            ConfigurarListagem(controlador);
+            //ConfigurarListagem(controlador);
         }
 
         private void ConfigurarListagem(ControladorBase controlador)
@@ -104,5 +104,9 @@ namespace GerardorDeTestes.WinApp
             controlador.Excluir();
         }
 
+        private void btnDuplicarTestes_Click(object sender, EventArgs e)
+        {
+            controlador.DuplicarTestes();
+        }
     }
 }
