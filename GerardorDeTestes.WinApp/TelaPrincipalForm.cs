@@ -1,9 +1,11 @@
 using GeradorDeTestes.Dominio.ModuloDisciplina;
 using GeradorDeTestes.Dominio.ModuloMateria;
 using GeradorDeTestes.Dominio.ModuloQuestoes;
+using GeradorDeTestes.Dominio.ModuloTestes;
 using GeradorDeTestes.Infra.Dados.Sql.ModuloDisciplina;
 using GeradorDeTestes.Infra.Dados.Sql.ModuloMateria;
 using GeradorDeTestes.Infra.Dados.Sql.ModuloQuestoes;
+using GeradorDeTestes.Infra.Dados.Sql.ModuloTestes;
 using GerardorDeTestes.WinApp.Compartilhado;
 using GerardorDeTestes.WinApp.ModuloDisciplina;
 using GerardorDeTestes.WinApp.ModuloMateria;
@@ -20,6 +22,7 @@ namespace GerardorDeTestes.WinApp
         private IRepositorioDisciplina repositorioDisciplina = new RepositorioDisciplinaEmSql();
         private IRepesitorioMateria repositorioMateria = new RepositorioMateriaEmSql();
         private IRepositorioQuestoes repositorioQuestoes = new RepositorioQuestoesEmSql();
+        private IRepositorioTeste repositorioTeste = new RepositorioTestesEmSql();
         public TelaPrincipalForm()
         {
             InitializeComponent();
@@ -55,7 +58,12 @@ namespace GerardorDeTestes.WinApp
         }
         private void testesMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTeste();
+            controlador = new ControladorTeste(
+                repositorioTeste,
+                repositorioDisciplina,
+                repositorioMateria,
+                repositorioQuestoes
+                );
             ConfigurarTelaPrincipal(controlador);
         }
 
@@ -63,7 +71,7 @@ namespace GerardorDeTestes.WinApp
         {
             labelTipoCadastro.Text = controlador.ObterTipoCadastro();
             ConfigurarBarraFerramentas(controlador);
-            //ConfigurarListagem(controlador);
+            ConfigurarListagem(controlador);
         }
 
         private void ConfigurarListagem(ControladorBase controlador)

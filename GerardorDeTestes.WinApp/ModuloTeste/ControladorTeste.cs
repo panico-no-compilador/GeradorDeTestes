@@ -1,20 +1,37 @@
-﻿using GeradorDeTestes.Dominio.ModuloMateria;
+﻿using GeradorDeTestes.Dominio.ModuloDisciplina;
+using GeradorDeTestes.Dominio.ModuloMateria;
+using GeradorDeTestes.Dominio.ModuloQuestoes;
 using GeradorDeTestes.Dominio.ModuloTestes;
 using GerardorDeTestes.WinApp.Compartilhado;
+using GerardorDeTestes.WinApp.ModuloQuestoes;
 
 namespace GerardorDeTestes.WinApp.ModuloTeste
 {
     public class ControladorTeste : ControladorBase
     {
         private IRepositorioTeste repositorioTeste;
+        private IRepositorioDisciplina repositorioDisciplina;
+        private IRepesitorioMateria repositorioMateria;
+        private IRepositorioQuestoes repositorioQuestao;
+
         private TabelaTesteControl tabelaTeste;
         public override string ToolTipInserir { get { return "Inserir novo Teste"; } }
         public override string ToolTipEditar { get { return "Editar Teste existente"; } }
         public override string ToolTipExcluir { get { return "Excluir Teste existente"; } }
 
-        public ControladorTeste()
+        public ControladorTeste(
+            IRepositorioTeste repositorioTeste,
+            IRepositorioDisciplina repositorioDisciplina,
+            IRepesitorioMateria repositorioMateria,
+            IRepositorioQuestoes repositorioQuestao
+            )
         {
+            this.repositorioTeste = repositorioTeste;
+            this.repositorioDisciplina = repositorioDisciplina;
+            this.repositorioMateria = repositorioMateria;
+            this.repositorioQuestao = repositorioQuestao;
         }
+
         public override void Editar()
         {
             throw new NotImplementedException();
@@ -38,7 +55,16 @@ namespace GerardorDeTestes.WinApp.ModuloTeste
 
         public override void Inserir()
         {
-            throw new NotImplementedException();
+            List<Materia> materias = repositorioMateria.SelecionarTodos();
+            List<Disciplina> disciplinas = repositorioDisciplina.SelecionarTodos();
+            TelaCadastrarTesteForm telaCadastrarTeste = new TelaCadastrarTesteForm(materias, disciplinas);
+            DialogResult opcaoEscolhida = telaCadastrarTeste.ShowDialog();
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Teste teste = telaCadastrarTeste.ObterTeste();
+                repositorioTeste.Inserir(teste);
+            }
+            CarregarTestes();
         }
 
         public override UserControl ObterListagem()
@@ -47,9 +73,7 @@ namespace GerardorDeTestes.WinApp.ModuloTeste
             {
                 tabelaTeste = new TabelaTesteControl();
             }
-
             CarregarTestes();
-
             return tabelaTeste;
         }
 

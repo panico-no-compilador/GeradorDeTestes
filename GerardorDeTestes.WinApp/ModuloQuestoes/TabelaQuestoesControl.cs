@@ -25,12 +25,12 @@ namespace GerardorDeTestes.WinApp.ModuloQuestoes
                 new DataGridViewTextBoxColumn()
                 {
                     Name = "Materia",
-                    HeaderText = "Materia",
+                    HeaderText = "Materia"
                 },
                 new DataGridViewTextBoxColumn()
                 {
                     Name = "Enunciado",
-                    HeaderText = "Enunciado",
+                    HeaderText = "Enunciado"
                 }
             };
             tabelaQuestoes.Columns.AddRange(colunas);
