@@ -148,7 +148,7 @@ namespace GerardorDeTestes.WinApp.ModuloQuestoes
             string alternativaSelecionado = ObterAlternativaSelecionado();
             if (!string.IsNullOrEmpty(alternativaSelecionado))
             {
-                string[] itemSelecionado = listaAlternativasParaExibicao.FirstOrDefault(i => i[0] == alternativaSelecionado);
+                string[] itemSelecionado = listaAlternativasParaExibicao.FirstOrDefault(i => i[1] == alternativaSelecionado);
                 if (itemSelecionado != null)
                 {
                     listaAlternativasParaExibicao.Remove(itemSelecionado);
