@@ -97,6 +97,7 @@ namespace GerardorDeTestes.WinApp
             testesMenuItem.Name = "testesMenuItem";
             testesMenuItem.Size = new Size(180, 22);
             testesMenuItem.Text = "Testes";
+            testesMenuItem.Click += testesMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -172,6 +173,7 @@ namespace GerardorDeTestes.WinApp
             btnDuplicarTestes.Name = "btnDuplicarTestes";
             btnDuplicarTestes.Padding = new Padding(7);
             btnDuplicarTestes.Size = new Size(42, 42);
+            btnDuplicarTestes.Click += btnDuplicarTestes_Click;
             // 
             // toolStripSeparator3
             // 

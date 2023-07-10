@@ -8,6 +8,7 @@ using GerardorDeTestes.WinApp.Compartilhado;
 using GerardorDeTestes.WinApp.ModuloDisciplina;
 using GerardorDeTestes.WinApp.ModuloMateria;
 using GerardorDeTestes.WinApp.ModuloQuestoes;
+using GerardorDeTestes.WinApp.ModuloTeste;
 
 namespace GerardorDeTestes.WinApp
 {
@@ -15,6 +16,7 @@ namespace GerardorDeTestes.WinApp
     {
         private static TelaPrincipalForm telaPrincipal;
         private ControladorBase controlador;
+        private ControladorTeste controladorTeste;
         private IRepositorioDisciplina repositorioDisciplina = new RepositorioDisciplinaEmSql();
         private IRepesitorioMateria repositorioMateria = new RepositorioMateriaEmSql();
         private IRepositorioQuestoes repositorioQuestoes = new RepositorioQuestoesEmSql();
@@ -51,12 +53,17 @@ namespace GerardorDeTestes.WinApp
             controlador = new ControladorMateria(repositorioMateria, repositorioDisciplina);
             ConfigurarTelaPrincipal(controlador);
         }
+        private void testesMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador = new ControladorTeste();
+            ConfigurarTelaPrincipal(controlador);
+        }
 
         private void ConfigurarTelaPrincipal(ControladorBase controlador)
         {
             labelTipoCadastro.Text = controlador.ObterTipoCadastro();
             ConfigurarBarraFerramentas(controlador);
-            ConfigurarListagem(controlador);
+            //ConfigurarListagem(controlador);
         }
 
         private void ConfigurarListagem(ControladorBase controlador)
@@ -99,6 +106,11 @@ namespace GerardorDeTestes.WinApp
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             controlador.Excluir();
+        }
+
+        private void btnDuplicarTestes_Click(object sender, EventArgs e)
+        {
+            controlador.DuplicarTestes();
         }
     }
 }
