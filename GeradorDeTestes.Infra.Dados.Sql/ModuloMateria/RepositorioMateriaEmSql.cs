@@ -73,7 +73,6 @@ namespace GeradorDeTestes.Infra.Dados.Sql.ModuloMateria
         @"SELECT 
                  M.[ID]                MATERIA_ID
                 ,M.[NOME]              MATERIA_NOME
-                ,M.[DISCIPLINA_ID]     MATERIA_DISCIPLINA_ID
                 ,M.[SERIE]             MATERIA_SERIE
 
 	            ,D.[ID]                DISCIPLINA_ID
