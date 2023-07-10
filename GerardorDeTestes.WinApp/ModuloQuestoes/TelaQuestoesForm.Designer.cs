@@ -29,18 +29,21 @@
         private void InitializeComponent()
         {
             lbMateria = new Label();
-            cbMaterias = new ComboBox();
+            cboxMaterias = new ComboBox();
             lbEnunciado = new Label();
-            textBox1 = new TextBox();
+            txtEnunciado = new TextBox();
             lbResposta = new Label();
-            tbRespostaAlternativa = new TextBox();
-            btnAdicionarRespostas = new Button();
-            button1 = new Button();
+            txtRespostaAlternativa = new TextBox();
+            btnAdicionarRespostasNoDataGridView = new Button();
+            btnGravar = new Button();
             btnCancelar = new Button();
             lbAlternativas = new Label();
             painelRespostasAlternativas = new Panel();
             tabelaRespostasAlternativas = new DataGridView();
             btnRemover = new Button();
+            cboxEstaCorreta = new CheckBox();
+            lbDisciplina = new Label();
+            cboxDisciplina = new ComboBox();
             painelRespostasAlternativas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tabelaRespostasAlternativas).BeginInit();
             SuspendLayout();
@@ -48,36 +51,36 @@
             // lbMateria
             // 
             lbMateria.AutoSize = true;
-            lbMateria.Location = new Point(50, 42);
+            lbMateria.Location = new Point(50, 75);
             lbMateria.Name = "lbMateria";
             lbMateria.Size = new Size(50, 15);
             lbMateria.TabIndex = 0;
             lbMateria.Text = "Matéria:";
             // 
-            // cbMaterias
+            // cboxMaterias
             // 
-            cbMaterias.FormattingEnabled = true;
-            cbMaterias.Location = new Point(106, 39);
-            cbMaterias.Name = "cbMaterias";
-            cbMaterias.Size = new Size(151, 23);
-            cbMaterias.TabIndex = 1;
+            cboxMaterias.FormattingEnabled = true;
+            cboxMaterias.Location = new Point(106, 72);
+            cboxMaterias.Name = "cboxMaterias";
+            cboxMaterias.Size = new Size(151, 23);
+            cboxMaterias.TabIndex = 1;
             // 
             // lbEnunciado
             // 
             lbEnunciado.AutoSize = true;
-            lbEnunciado.Location = new Point(34, 116);
+            lbEnunciado.Location = new Point(34, 137);
             lbEnunciado.Name = "lbEnunciado";
             lbEnunciado.Size = new Size(66, 15);
             lbEnunciado.TabIndex = 2;
             lbEnunciado.Text = "Enunciado:";
             // 
-            // textBox1
+            // txtEnunciado
             // 
-            textBox1.Location = new Point(106, 78);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(304, 95);
-            textBox1.TabIndex = 3;
+            txtEnunciado.Location = new Point(106, 117);
+            txtEnunciado.Multiline = true;
+            txtEnunciado.Name = "txtEnunciado";
+            txtEnunciado.Size = new Size(304, 62);
+            txtEnunciado.TabIndex = 3;
             // 
             // lbResposta
             // 
@@ -88,32 +91,33 @@
             lbResposta.TabIndex = 4;
             lbResposta.Text = "Resposta:";
             // 
-            // tbRespostaAlternativa
+            // txtRespostaAlternativa
             // 
-            tbRespostaAlternativa.Location = new Point(106, 197);
-            tbRespostaAlternativa.Multiline = true;
-            tbRespostaAlternativa.Name = "tbRespostaAlternativa";
-            tbRespostaAlternativa.Size = new Size(204, 62);
-            tbRespostaAlternativa.TabIndex = 5;
+            txtRespostaAlternativa.Location = new Point(106, 197);
+            txtRespostaAlternativa.Multiline = true;
+            txtRespostaAlternativa.Name = "txtRespostaAlternativa";
+            txtRespostaAlternativa.Size = new Size(204, 62);
+            txtRespostaAlternativa.TabIndex = 5;
             // 
-            // btnAdicionarRespostas
+            // btnAdicionarRespostasNoDataGridView
             // 
-            btnAdicionarRespostas.Location = new Point(325, 197);
-            btnAdicionarRespostas.Name = "btnAdicionarRespostas";
-            btnAdicionarRespostas.Size = new Size(85, 62);
-            btnAdicionarRespostas.TabIndex = 6;
-            btnAdicionarRespostas.Text = "Adicionar";
-            btnAdicionarRespostas.UseVisualStyleBackColor = true;
-            btnAdicionarRespostas.Click += btnAdicionarRespostas_Click;
+            btnAdicionarRespostasNoDataGridView.Location = new Point(325, 197);
+            btnAdicionarRespostasNoDataGridView.Name = "btnAdicionarRespostasNoDataGridView";
+            btnAdicionarRespostasNoDataGridView.Size = new Size(85, 62);
+            btnAdicionarRespostasNoDataGridView.TabIndex = 6;
+            btnAdicionarRespostasNoDataGridView.Text = "Adicionar";
+            btnAdicionarRespostasNoDataGridView.UseVisualStyleBackColor = true;
+            btnAdicionarRespostasNoDataGridView.Click += btnAdicionarRespostasNoGridView_Click;
             // 
-            // button1
+            // btnGravar
             // 
-            button1.Location = new Point(282, 462);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 37);
-            button1.TabIndex = 8;
-            button1.Text = "Gravar";
-            button1.UseVisualStyleBackColor = true;
+            btnGravar.Location = new Point(282, 462);
+            btnGravar.Name = "btnGravar";
+            btnGravar.Size = new Size(75, 37);
+            btnGravar.TabIndex = 8;
+            btnGravar.Text = "Gravar";
+            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
@@ -162,21 +166,51 @@
             btnRemover.UseVisualStyleBackColor = true;
             btnRemover.Click += btnRemover_Click;
             // 
+            // cboxEstaCorreta
+            // 
+            cboxEstaCorreta.AutoSize = true;
+            cboxEstaCorreta.Location = new Point(27, 240);
+            cboxEstaCorreta.Name = "cboxEstaCorreta";
+            cboxEstaCorreta.Size = new Size(70, 19);
+            cboxEstaCorreta.TabIndex = 12;
+            cboxEstaCorreta.Text = "Correta?";
+            cboxEstaCorreta.UseVisualStyleBackColor = true;
+            // 
+            // lbDisciplina
+            // 
+            lbDisciplina.AutoSize = true;
+            lbDisciplina.Location = new Point(36, 35);
+            lbDisciplina.Name = "lbDisciplina";
+            lbDisciplina.Size = new Size(61, 15);
+            lbDisciplina.TabIndex = 13;
+            lbDisciplina.Text = "Disciplina:";
+            // 
+            // cboxDisciplina
+            // 
+            cboxDisciplina.FormattingEnabled = true;
+            cboxDisciplina.Location = new Point(106, 32);
+            cboxDisciplina.Name = "cboxDisciplina";
+            cboxDisciplina.Size = new Size(151, 23);
+            cboxDisciplina.TabIndex = 14;
+            // 
             // TelaQuestoesForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(462, 511);
+            Controls.Add(cboxDisciplina);
+            Controls.Add(lbDisciplina);
+            Controls.Add(cboxEstaCorreta);
             Controls.Add(lbAlternativas);
             Controls.Add(btnCancelar);
-            Controls.Add(button1);
+            Controls.Add(btnGravar);
             Controls.Add(painelRespostasAlternativas);
-            Controls.Add(btnAdicionarRespostas);
-            Controls.Add(tbRespostaAlternativa);
+            Controls.Add(btnAdicionarRespostasNoDataGridView);
+            Controls.Add(txtRespostaAlternativa);
             Controls.Add(lbResposta);
-            Controls.Add(textBox1);
+            Controls.Add(txtEnunciado);
             Controls.Add(lbEnunciado);
-            Controls.Add(cbMaterias);
+            Controls.Add(cboxMaterias);
             Controls.Add(lbMateria);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
@@ -194,17 +228,20 @@
         #endregion
 
         private Label lbMateria;
-        private ComboBox cbMaterias;
         private Label lbEnunciado;
-        private TextBox textBox1;
         private Label lbResposta;
-        private TextBox tbRespostaAlternativa;
-        private Button btnAdicionarRespostas;
-        private Button button1;
-        private Button btnCancelar;
         private Label lbAlternativas;
+        private ComboBox cboxMaterias;
+        private TextBox txtEnunciado;
+        private TextBox txtRespostaAlternativa;
         private Panel painelRespostasAlternativas;
+        private Button btnAdicionarRespostasNoDataGridView;
+        private Button btnGravar;
+        private Button btnCancelar;
         private Button btnRemover;
         private DataGridView tabelaRespostasAlternativas;
+        private CheckBox cboxEstaCorreta;
+        private Label lbDisciplina;
+        private ComboBox cboxDisciplina;
     }
 }

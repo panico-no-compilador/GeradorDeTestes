@@ -6,10 +6,12 @@ namespace GeradorDeTestes.Infra.Dados.Sql.ModuloDisciplina
     {
         protected string sqlCriarTabela =>
             @"CREATE TABLE [dbo].[TbDisciplina] 
-	            (
-		            [Id] INT NOT NULL PRIMARY KEY IDENTITY,
-                    [Nome] VARCHAR(200) NOT NULL
-	            )";
+            (
+                [Id] INT NOT NULL IDENTITY,
+                [Nome] VARCHAR(200) NOT NULL, 
+                
+                CONSTRAINT [PK_TbDisciplina] PRIMARY KEY CLUSTERED([Id] ASC)
+            )";
         protected override string sqlInserir =>
             @"
                 INSERT INTO [TBDISCIPLINA] 

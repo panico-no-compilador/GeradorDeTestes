@@ -1,7 +1,9 @@
 using GeradorDeTestes.Dominio.ModuloDisciplina;
 using GeradorDeTestes.Dominio.ModuloMateria;
+using GeradorDeTestes.Dominio.ModuloQuestoes;
 using GeradorDeTestes.Infra.Dados.Sql.ModuloDisciplina;
 using GeradorDeTestes.Infra.Dados.Sql.ModuloMateria;
+using GeradorDeTestes.Infra.Dados.Sql.ModuloQuestoes;
 using GerardorDeTestes.WinApp.Compartilhado;
 using GerardorDeTestes.WinApp.ModuloDisciplina;
 using GerardorDeTestes.WinApp.ModuloMateria;
@@ -15,7 +17,7 @@ namespace GerardorDeTestes.WinApp
         private ControladorBase controlador;
         private IRepositorioDisciplina repositorioDisciplina = new RepositorioDisciplinaEmSql();
         private IRepesitorioMateria repositorioMateria = new RepositorioMateriaEmSql();
-
+        private IRepositorioQuestoes repositorioQuestoes = new RepositorioQuestoesEmSql();
         public TelaPrincipalForm()
         {
             InitializeComponent();
@@ -41,7 +43,7 @@ namespace GerardorDeTestes.WinApp
         }
         private void questoesMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorQuestoes();
+            controlador = new ControladorQuestoes(repositorioMateria ,repositorioQuestoes, repositorioDisciplina);
             ConfigurarTelaPrincipal(controlador);
         }
         private void materiasMenuItem_Click(object sender, EventArgs e)
