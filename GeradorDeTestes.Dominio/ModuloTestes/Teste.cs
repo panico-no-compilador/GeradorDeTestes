@@ -1,9 +1,16 @@
 ﻿using GeradorDeTestes.Dominio.Compartilhado;
+using GeradorDeTestes.Dominio.ModuloMateria;
 
 namespace GeradorDeTestes.Dominio.ModuloTestes
 {
     public class Teste : EntidadeBase<Teste>
     {
+        public string Titulo { get; set; }
+        public Materia Mateira { get; set; }
+        public List<object> Questoes { get; set; }
+        public bool Recuperacao { get; set; }
+        public int QntdQuestoes { get; set; }
+
         public override void AtualizarInformacoes(Teste registroAtualizado)
         {
             throw new NotImplementedException();
@@ -13,19 +20,5 @@ namespace GeradorDeTestes.Dominio.ModuloTestes
         {
             throw new NotImplementedException();
         }
-
-
-        //public override bool Equals(object? obj)
-        //{
-        //    return obj is Materia materia &&
-        //           Id == materia.Id &&
-        //           Nome == materia.Nome &&
-        //           Disciplina == materia.Disciplina &&
-        //           Serie == materia.Serie;
-        //}
-        //public override string ToString()
-        //{
-        //    return $"{Nome} , {Disciplina} , {Serie}";
-        //}
     }
 }

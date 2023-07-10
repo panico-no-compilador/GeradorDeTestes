@@ -1,15 +1,20 @@
-﻿using GerardorDeTestes.WinApp.Compartilhado;
+﻿using GeradorDeTestes.Dominio.ModuloMateria;
+using GeradorDeTestes.Dominio.ModuloTestes;
+using GerardorDeTestes.WinApp.Compartilhado;
 
 namespace GerardorDeTestes.WinApp.ModuloTeste
 {
-    internal class ControladorTeste : ControladorBase
+    public class ControladorTeste : ControladorBase
     {
-        public override string ToolTipInserir => throw new NotImplementedException();
+        private IRepositorioTeste repositorioTeste;
+        private TabelaTesteControl tabelaTeste;
+        public override string ToolTipInserir { get { return "Inserir novo Teste"; } }
+        public override string ToolTipEditar { get { return "Editar Teste existente"; } }
+        public override string ToolTipExcluir { get { return "Excluir Teste existente"; } }
 
-        public override string ToolTipEditar => throw new NotImplementedException();
-
-        public override string ToolTipExcluir => throw new NotImplementedException();
-
+        public ControladorTeste()
+        {
+        }
         public override void Editar()
         {
             throw new NotImplementedException();
@@ -38,12 +43,25 @@ namespace GerardorDeTestes.WinApp.ModuloTeste
 
         public override UserControl ObterListagem()
         {
-            throw new NotImplementedException();
+            if (tabelaTeste == null)
+            {
+                tabelaTeste = new TabelaTesteControl();
+            }
+
+            CarregarTestes();
+
+            return tabelaTeste;
+        }
+
+        private void CarregarTestes()
+        {
+            List<Teste> testes = repositorioTeste.SelecionarTodos();
+            tabelaTeste.AtualizarRegistros(testes);
         }
 
         public override string ObterTipoCadastro()
         {
-            throw new NotImplementedException();
+            return "Cadastro de Teste";
         }
     }
 }

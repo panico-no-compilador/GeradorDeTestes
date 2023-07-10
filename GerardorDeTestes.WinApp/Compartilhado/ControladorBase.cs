@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GerardorDeTestes.WinApp.Compartilhado
 {
-    internal abstract class ControladorBase
+    public abstract class ControladorBase
     {
         public abstract string ToolTipInserir { get; }
         public abstract string ToolTipEditar { get; }
@@ -18,6 +18,6 @@ namespace GerardorDeTestes.WinApp.Compartilhado
         public abstract void Excluir();
         public abstract UserControl ObterListagem();
         public abstract string ObterTipoCadastro();
-        public virtual void DuplicarTestes(){ }
+        public virtual void DuplicarTestes() { }
     }
 }

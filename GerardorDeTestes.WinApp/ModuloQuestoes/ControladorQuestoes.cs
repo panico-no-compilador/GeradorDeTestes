@@ -1,10 +1,4 @@
 ﻿using GerardorDeTestes.WinApp.Compartilhado;
-using GerardorDeTestes.WinApp.ModuloDisciplina;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GerardorDeTestes.WinApp.ModuloQuestoes
 {
